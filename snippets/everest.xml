@@ -18,20 +18,20 @@
   <!-- new -->
   <remote name="new"
           fetch="https://github.com/ProjectEverest-wip/"
-          revision="udc" />
+          revision="qpr2" />
 
   <!--ART-->
-  <project path="art" name="android_art" groups="pdk" remote="everest" />
+  <project path="art" name="android_art" groups="pdk" remote="new" />
 
   <!-- Rootdir -->
-  <project path="bionic" name="android_bionic" groups="pdk" remote="everest" />
-  <project path="manifest" name="android_manifest" remote="everest" />
+  <project path="bionic" name="android_bionic" groups="pdk" remote="new" />
+  <project path="manifest" name="android_manifest" remote="new" />
 
   <!-- Bootable -->
-  <project path="bootable/recovery" name="android_bootable_recovery" groups="pdk" remote="everest" />
+  <project path="bootable/recovery" name="android_bootable_recovery" groups="pdk" remote="new" />
 
   <!-- Build -->
-  <project path="build/make" name="android_build" groups="pdk" remote="everest" >
+  <project path="build/make" name="android_build" groups="pdk" remote="new" >
     <copyfile src="core/root.mk" dest="Makefile" />
     <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
     <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
@@ -40,7 +40,7 @@
     <linkfile src="target" dest="build/target" />
     <linkfile src="tools" dest="build/tools" />
   </project>
-  <project path="build/soong" name="android_build_soong" groups="pdk,tradefed" remote="everest" >
+  <project path="build/soong" name="android_build_soong" groups="pdk,tradefed" remote="new" >
     <linkfile src="root.bp" dest="Android.bp" />
     <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
@@ -51,16 +51,16 @@
   <project path="device/qcom/sepolicy-legacy-um" name="android_device_qcom_sepolicy-legacy-um" groups="qcom,sdm660" remote="everest" />
 
   <!-- Frameworks -->
-  <project path="frameworks/av" name="android_frameworks_av" groups="pdk" remote="everest" />
-  <project path="frameworks/base" name="android_frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="new" />
-  <project path="frameworks/libs/systemui" name="android_frameworks_libs_systemui" remote="everest" />
-  <project path="frameworks/native" name="android_frameworks_native" groups="pdk-cw-fs,pdk-fs" remote="everest" />
-  <project path="frameworks/opt/telephony" name="android_frameworks_opt_telephony" groups="pdk" remote="everest" />
+  <project path="frameworks/av" name="android_frameworks_av" groups="pdk" remote="new" />
+  <project path="frameworks/base" name="frameworks_base" groups="pdk-cw-fs,pdk-fs" remote="new" />
+  <project path="frameworks/libs/systemui" name="android_frameworks_libs_systemui" remote="new" />
+  <project path="frameworks/native" name="android_frameworks_native" groups="pdk-cw-fs,pdk-fs" remote="new" />
+  <project path="frameworks/opt/telephony" name="android_frameworks_opt_telephony" groups="pdk" remote="new" />
 
   <!-- Hardware -->
-  <project path="hardware/interfaces" name="android_hardware_interfaces" remote="everest" />
+  <project path="hardware/interfaces" name="android_hardware_interfaces" remote="new" />
   <project path="hardware/everest/interfaces" name="android_hardware_everest_interfaces" remote="everest" />
-  <project path="hardware/libhardware" name="android_hardware_libhardware" groups="pdk" remote="everest" />
+  <project path="hardware/libhardware" name="android_hardware_libhardware" groups="pdk" remote="new" />
   <project path="hardware/xiaomi" name="android_hardware_xiaomi" remote="everest" />
   <project path="hardware/qcom-caf/common" name="android_hardware_qcom-caf_common" groups="qcom" remote="everest" >
     <!-- Add guard for AOSP hardware/qcom dir -->
@@ -101,30 +101,30 @@
   <project path="packages/apps/EverestWallpaperStub" name="android_packages_apps_EverestWallpaperStub" remote="everest" />
   <project path="packages/apps/FaceUnlock" name="android_packages_apps_FaceUnlock" remote="everest-gitea" />
   <project path="packages/apps/GameSpace" name="android_packages_apps_GameSpace" remote="everest" />
-  <project path="packages/apps/Nfc" name="android_packages_apps_Nfc" groups="apps_nfc,pdk-fs" remote="everest" />
-  <project path="packages/apps/Settings" name="android_packages_apps_Settings" groups="pdk-fs" remote="everest" />
+  <project path="packages/apps/Nfc" name="android_packages_apps_Nfc" groups="apps_nfc,pdk-fs" remote="new" />
+  <project path="packages/apps/Settings" name="android_packages_apps_Settings" groups="pdk-fs" remote="new" />
   <project path="packages/apps/TouchGestures" name="android_packages_apps_TouchGestures" remote="everest" />
-  <project path="packages/modules/adb" name="android_packages_modules_adb" groups="pdk" remote="everest" />
-  <project path="packages/modules/Bluetooth" name="android_packages_modules_Bluetooth" groups="pdk" remote="everest" />
+  <project path="packages/modules/adb" name="android_packages_modules_adb" groups="pdk" remote="new" />
+  <project path="packages/modules/Bluetooth" name="android_packages_modules_Bluetooth" groups="pdk" remote="new" />
   <project path="packages/apps/BtHelper" name="TheParasiteProject/packages_apps_BtHelper" revision="14.0" remote="github" />
-  <project path="packages/modules/Connectivity" name="android_packages_modules_Connectivity" groups="pdk" remote="everest" />
-  <project path="packages/modules/Permission" name="android_packages_modules_Permission" groups="pdk-cw-fs,pdk-fs" remote="everest" />
-  <project path="packages/modules/StatsD" name="android_packages_modules_StatsD" groups="pdk-cw-fs,pdk-fs" remote="everest" />
-  <project path="packages/modules/Wifi" name="android_packages_modules_Wifi" groups="pdk-cw-fs,pdk-fs" remote="everest" />
+  <project path="packages/modules/Connectivity" name="android_packages_modules_Connectivity" groups="pdk" remote="everest-gitea" revision="qpr2" />
+  <project path="packages/modules/Permission" name="android_packages_modules_Permission" groups="pdk-cw-fs,pdk-fs" remote="new" />
+  <project path="packages/modules/StatsD" name="android_packages_modules_StatsD" groups="pdk-cw-fs,pdk-fs" remote="new" />
+  <project path="packages/modules/Wifi" name="android_packages_modules_Wifi" groups="pdk-cw-fs,pdk-fs" remote="new" />
   <project path="packages/overlays/Themes" name="android_packages_overlays_Themes" remote="everest" />
-  <project path="packages/providers/DownloadProvider" name="android_packages_providers_DownloadProvider" groups="pdk-cw-fs,pdk-fs" remote="everest" />
-  <project path="packages/services/Telecomm" name="android_packages_services_Telecomm" groups="pdk-cw-fs,pdk-fs" remote="everest" />
+  <project path="packages/providers/DownloadProvider" name="android_packages_providers_DownloadProvider" groups="pdk-cw-fs,pdk-fs" remote="new" />
+  <project path="packages/services/Telecomm" name="android_packages_services_Telecomm" groups="pdk-cw-fs,pdk-fs" remote="new" />
 
   <!-- System -->
-  <project path="system/core" name="android_system_core" groups="pdk" remote="everest" />
-  <project path="system/libhwbinder" name="android_system_libhwbinder" remote="everest" />
-  <project path="system/sepolicy" name="android_system_sepolicy" groups="pdk" remote="everest" />
-  <project path="system/update_engine" name="android_system_update_engine" groups="pdk" remote="everest" />
-  <project path="system/vold" name="android_system_vold" groups="pdk" remote="everest" />
+  <project path="system/core" name="android_system_core" groups="pdk" remote="new" />
+  <project path="system/libhwbinder" name="android_system_libhwbinder" remote="new" />
+  <project path="system/sepolicy" name="android_system_sepolicy" groups="pdk" remote="new" />
+  <project path="system/update_engine" name="android_system_update_engine" groups="pdk" remote="new" />
+  <project path="system/vold" name="android_system_vold" groups="pdk" remote="new" />
 
   <!-- Vendor -->
   <project path="vendor/certification" name="android_vendor_certification" remote="everest-gitea" />
-  <project path="vendor/everest" name="android_vendor_everest" remote="everest" />
+  <project path="vendor/everest" name="android_vendor_everest" remote="new" />
   <project path="vendor/gms" name="android_vendor_gms" remote="everest-gitea" clone-depth="1" />
   <project path="vendor/pixel-framework" name="android_vendor_pixel-framework" remote="everest" />
   <project path="vendor/support" name="android_vendor_support" remote="everest" clone-depth="1" />
